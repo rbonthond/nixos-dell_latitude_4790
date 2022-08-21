@@ -19,13 +19,22 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless = {
+    enable = true;
+    userControlled.enable = true;
+    networks = {
+        "bonthond" = {
+          pskRaw = "4b1884c6f79c3d5ad7dece5c0cfd6e5a9cac3b3d567761ffa919b3da39c26bd1";
+        };
+    };
+  };
 
   # Configure network proxy if necessary
   #networking.proxy.default = "http://user:password@proxy:port/";
   #networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  #networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
