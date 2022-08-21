@@ -103,7 +103,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      wget vim git 
+     singularity
   ];
+
+  # Virtualbox
+  #virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
+  # users.extraGroups.vboxusers.members = [ "robbin" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -132,4 +138,5 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 
+  hardware.opengl.enable = true;
 }
