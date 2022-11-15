@@ -87,6 +87,7 @@
     description = "Robbin Bonthond";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  nix.settings.trusted-users = [ "root" "robbin" ];
 
   security.sudo.wheelNeedsPassword = false;
 
