@@ -111,6 +111,7 @@
   environment.systemPackages = with pkgs; [
      wget vim git 
      singularity
+     autorandr
   ];
 
   # Virtualbox
