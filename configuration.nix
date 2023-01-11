@@ -1,10 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -76,7 +77,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.printing.drivers = [pkgs.cnijfilter2 ];
+  services.printing.drivers = [pkgs.cnijfilter2];
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
@@ -103,9 +104,9 @@
   users.users.robbin = {
     isNormalUser = true;
     description = "Robbin Bonthond";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
   };
-  nix.settings.trusted-users = [ "root" "robbin" ];
+  nix.settings.trusted-users = ["root" "robbin"];
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -127,9 +128,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     wget vim git 
-     singularity
-     autorandr
+    wget
+    vim
+    git
+    autorandr
+    alejandra
   ];
 
   # Virtualbox
