@@ -17,8 +17,7 @@
 
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless = {
