@@ -13,8 +13,8 @@
   }: {
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.dell-latitude-7490
