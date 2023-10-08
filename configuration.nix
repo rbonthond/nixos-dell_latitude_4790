@@ -74,6 +74,18 @@
   # enable opengl support
   hardware.opengl.enable = true;
 
+  # enable netdata
+  services.netdata = {
+    enable = true;
+    config = {
+      global = {
+      };
+      ml = {
+        "enabled" = "yes";
+      };
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.robbin = {
     isNormalUser = true;
