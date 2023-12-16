@@ -120,7 +120,7 @@
   services.printing.enable = true;
   services.printing.drivers = [pkgs.cnijfilter2];
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   # Virtualbox
   #virtualisation.virtualbox.host.enable = true;
@@ -143,15 +143,12 @@
     xkbVariant = "";
     displayManager = {
       sddm.enable = true;
-      #autoLogin = {
-      #  enable = true;
-      #  user = "robbin";
-      #};
     };
     desktopManager.plasma5 = {
       enable = true;
       useQtScaling = true;
     };
+    desktopManager.xfce.enable = true;
   };
   security.pam.services = {
     sddm.enableKwallet = true;
