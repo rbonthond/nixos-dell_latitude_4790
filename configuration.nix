@@ -100,8 +100,6 @@
     curl
     vim
     git
-    autorandr
-    alejandra
   ];
 
   # Enable sound
@@ -135,7 +133,7 @@
   #   enableSSHSupport = true;
   # };
 
-  # Enable the KDE Plasma Desktop Environment.
+  # Enable window managers
   services.xserver = {
     enable = true;
     libinput.enable = true;
@@ -143,34 +141,31 @@
     xkbVariant = "";
     displayManager = {
       sddm.enable = true;
+      #gdm.enable = true;
     };
-    desktopManager.plasma5 = {
-      enable = true;
-      useQtScaling = true;
+    desktopManager = {
+      #xterm.enable = true;
+      plasma5 = {
+        enable = true;
+        useQtScaling = true;
+      };
+      #xfce.enable = true;
+      #gnome.enable = true;
     };
-    desktopManager.xfce.enable = true;
   };
   security.pam.services = {
     sddm.enableKwallet = true;
   };
+  #programs.dconf.enable = true;
+  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
   #environment.systemPackages = with pkgs; [
   #  kdeFrameworks.kwallet
   #  kdeapplications.kwalletmanager
   #];
-
-  # Enable XFCE Desktop Environment.
-  #services.xserver = {
-  #  enable = true;
-  #  desktopManager = {
-  #    xterm.enable = true;
-  #    xfce.enable = true;
-  #  };
-  #  displayManager.defaultSession = "xfce";
-  #};
   #services.compton = {
   #  enable = true;
-  #  fabe = true;
-  #  inactiveOpacity = "0.9";
+  #  fade = true;
+  #  inactiveOpacity = 0.9;
   #  shadow = true;
   #  fadeDelta = 4;
   #};
@@ -180,17 +175,10 @@
   #  substituters = ["https://hyprland.cachix.org"];
   #  trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   #};
-  #services.xserver = {
-  #  enable = true;
-  #  displayManager.gdm = {
-  #    enable = true;
-  #    #wayland = true;
-  #  };
-  #};
   #programs.hyprland = {
   #  enable = true;
   #  #xwayland.enable = true;
-  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  #  #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   #};
 
 }
