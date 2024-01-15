@@ -156,8 +156,8 @@
   security.pam.services = {
     sddm.enableKwallet = true;
   };
-  #programs.dconf.enable = true;
-  #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  programs.dconf.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   #environment.systemPackages = with pkgs; [
   #  kdeFrameworks.kwallet
   #  kdeapplications.kwalletmanager
