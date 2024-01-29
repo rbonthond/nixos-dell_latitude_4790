@@ -37,6 +37,10 @@
   nix.settings.trusted-users = ["root" "robbin"];
   security.sudo.wheelNeedsPassword = false;
 
+  # Store
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+
   # Networking
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless = {
@@ -125,6 +129,16 @@
   #virtualisation.virtualbox.host.enableExtensionPack = true;
   #users.extraGroups.vboxusers.members = [ "robbin" ];
 
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+  users.extraGroups.docker.members = ["robbin"];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -180,5 +194,4 @@
   #  #xwayland.enable = true;
   #  #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   #};
-
 }
