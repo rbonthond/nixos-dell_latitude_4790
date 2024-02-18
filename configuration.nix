@@ -151,8 +151,10 @@
   services.xserver = {
     enable = true;
     libinput.enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
     displayManager = {
       sddm.enable = true;
       #gdm.enable = true;
