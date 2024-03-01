@@ -161,9 +161,12 @@
     };
     desktopManager = {
       #xterm.enable = true;
-      plasma5 = {
+      #plasma5 = {
+      #  enable = true;
+      #  useQtScaling = true;
+      #};
+      plasma6 = {
         enable = true;
-        useQtScaling = true;
       };
       #xfce.enable = true;
       #gnome.enable = true;
