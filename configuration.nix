@@ -148,6 +148,8 @@
   # };
 
   # Enable window managers
+  services.desktopManager.plasma6.enable = true;
+
   services.xserver = {
     enable = true;
     libinput.enable = true;
@@ -156,7 +158,10 @@
       variant = "";
     };
     displayManager = {
-      sddm.enable = true;
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
       #gdm.enable = true;
     };
     desktopManager = {
@@ -165,18 +170,22 @@
       #  enable = true;
       #  useQtScaling = true;
       #};
-      plasma6 = {
-        enable = true;
-      };
+      #plasma6 = {
+      #  enable = true;
+      #};
       #xfce.enable = true;
       #gnome.enable = true;
     };
   };
+
   security.pam.services = {
     sddm.enableKwallet = true;
   };
+
   programs.dconf.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   #environment.systemPackages = with pkgs; [
   #  kdeFrameworks.kwallet
   #  kdeapplications.kwalletmanager
