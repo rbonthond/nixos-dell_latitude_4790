@@ -148,9 +148,10 @@
   #   enableSSHSupport = true;
   # };
 
-  # Enable window managers
+  # Enable window and desktop managers
   services.desktopManager.plasma6.enable = true;
-
+  services.displayManager.sddm.enable = true;
+  services.displayManager.ssdm.wayland.enable = true;
   services.xserver = {
     enable = true;
     libinput.enable = true;
@@ -158,55 +159,8 @@
       layout = "us";
       variant = "";
     };
-    displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
-      #gdm.enable = true;
-    };
-    desktopManager = {
-      #xterm.enable = true;
-      #plasma5 = {
-      #  enable = true;
-      #  useQtScaling = true;
-      #};
-      #plasma6 = {
-      #  enable = true;
-      #};
-      #xfce.enable = true;
-      #gnome.enable = true;
-    };
   };
-
-  security.pam.services = {
-    sddm.enableKwallet = true;
-  };
-
+  security.pam.services.sddm.enableKwallet = true;
   programs.dconf.enable = true;
-
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  #environment.systemPackages = with pkgs; [
-  #  kdeFrameworks.kwallet
-  #  kdeapplications.kwalletmanager
-  #];
-  #services.compton = {
-  #  enable = true;
-  #  fade = true;
-  #  inactiveOpacity = 0.9;
-  #  shadow = true;
-  #  fadeDelta = 4;
-  #};
-
-  # hyprland
-  #nix.settings = {
-  #  substituters = ["https://hyprland.cachix.org"];
-  #  trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  #};
-  #programs.hyprland = {
-  #  enable = true;
-  #  #xwayland.enable = true;
-  #  #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  #};
 }
