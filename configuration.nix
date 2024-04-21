@@ -151,7 +151,7 @@
   # Enable window and desktop managers
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
-  services.displayManager.ssdm.wayland.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.xserver = {
     enable = true;
     libinput.enable = true;
