@@ -20,7 +20,7 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   # Enable flakes
-  nix.package = pkgs.nixVersions.unstable;
+  nix.package = pkgs.nixVersions.git;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Allow unfree packages
@@ -152,9 +152,9 @@
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.libinput.enable = true;
   services.xserver = {
     enable = true;
-    libinput.enable = true;
     xkb = {
       layout = "us";
       variant = "";
