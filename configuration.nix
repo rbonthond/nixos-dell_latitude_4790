@@ -77,7 +77,7 @@
   services.openssh.enable = true;
 
   # enable opengl support
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # enable netdata
   services.netdata = {
