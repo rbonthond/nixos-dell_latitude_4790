@@ -105,6 +105,7 @@
     curl
     vim
     git
+    just
   ];
 
   # Enable sound
