@@ -20,7 +20,7 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   # Enable flakes
-  nix.package = pkgs.nixVersions.git;
+  nix.package = pkgs.nixVersions.latest;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Allow unfree packages
